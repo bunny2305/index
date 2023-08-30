@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compliments</title>
+  <style>
+    body {
+      background-color: #ffcccc; /* Change this to your preferred color */
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .popup-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      text-align: center;
+    }
+    .popup {
+      background-color: #fff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      font-size: 14px;
+      white-space: pre-wrap;
+      margin-bottom: 10px;
+    }
+    button {
+      background-color: #ff69b4;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="popup-container">
+      <div class="popup" id="popup"></div>
+    </div>
+    <div class="button-container">
+      <button onclick="showCompliment('eyes')">👀 Eyes</button>
+      <button onclick="showCompliment('nose')">👃 Nose</button>
+      <button onclick="showCompliment('lips')">💋 Lips</button>
+      <button onclick="showCompliment('hair')">💇 Hair</button>
+      <button onclick="showCompliment('smell')">🌸 Smell</button>
+      <button onclick="showCompliment('heart')">❤️ Heart</button>
+      <button onclick="showCompliment('ears')">👂 Ears</button>
+      <button onclick="showCompliment('nature')">🌳 Nature</button>
+      <button onclick="showCompliment('hug')">🤗 Hug</button>
+    </div>
+    <button onclick="window.location.href='page3.html'">Play Song</button>
+  </div>
+
+  <script>
+    function showCompliment(compliment) {
+      const compliments = {
+        'eyes': "I love how your eyes light up when you talk about the things that truly matter to you. 👀",
+        'nose': "Your nose gives your face a unique and captivating character, making you stand out effortlessly. 👃",
+        'lips': "Your lips hold the genuine warmth of your smiles and the sincerity of your words. 💋",
+        'hair': "I'm drawn to the way your hair falls so naturally, a reflection of your authentic self. 💇",
+        'smell': "You have this comforting and familiar scent that feels like home, no matter where we are. 🌸",
+        'heart': "Your kindness and compassion touch everyone around you, making the world a better place. ❤️",
+        'ears': "You have the amazing ability to truly listen, making those around you feel valued and understood. 👂",
+        'nature': "Spending time with you feels like a walk through the most peaceful and beautiful parts of nature. 🌳",
+        'hug': "Your hugs are like a comforting embrace from reality, where I feel safe and cherished. 🤗"
+      };
+
+      const popup = document.getElementById('popup');
+      popup.innerHTML = compliments[compliment];
+
+      setTimeout(() => {
+        popup.innerHTML = '';
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
